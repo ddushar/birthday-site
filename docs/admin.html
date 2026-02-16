@@ -8,7 +8,7 @@
 <body>
 <header>
   <div class="logo">Kilop Admin</div>
-  <button class="btn" onclick="toggleTheme()">Сменить тему</button>
+  <button class="btn theme-toggle" onclick="toggleTheme()">Сменить тему</button>
 </header>
 
 <div class="container">
@@ -31,19 +31,40 @@
     <h2>Панель админа</h2>
 
     <h3>Сервера:</h3>
-    <div id="servers"></div>
+    <div id="servers" class="flex"></div>
 
     <h3>Донаты:</h3>
-    <div id="donates"></div>
+    <div id="donates" class="flex"></div>
   </div>
 </div>
 
 <script src="js/app.js"></script>
 <script>
-// Логин
+// URL backend Render
+const API = "https://birthday-site.onrender.com/api";
+
+// Тема
+function toggleTheme(){document.body.classList.toggle("light");}
+
+// Регистрация
+async function register(){
+  const username=document.getElementById("regUser").value;
+  const password=document.getElementById("regPass").value;
+  if(!username || !password){alert("Введите логин и пароль"); return;}
+  const res = await fetch(`${API}/auth/register`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({username,password})
+  });
+  if(res.ok){alert("Аккаунт создан! Теперь можно войти");}
+  else{alert("Ошибка регистрации");}
+}
+
+// Вход
 async function login(){
   const username=document.getElementById("logUser").value;
   const password=document.getElementById("logPass").value;
+  if(!username || !password){alert("Введите логин и пароль"); return;}
   const res=await fetch(`${API}/auth/login`,{
     method:"POST",
     headers:{"Content-Type":"application/json"},
@@ -56,19 +77,7 @@ async function login(){
     alert("Вход выполнен");
     loadServers();
     loadDonates();
-  } else alert("Ошибка логина");
-}
-
-// Регистрация
-async function register(){
-  const username=document.getElementById("regUser").value;
-  const password=document.getElementById("regPass").value;
-  await fetch(`${API}/auth/register`,{
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({username,password})
-  });
-  alert("Аккаунт создан! Теперь можно войти");
+  }else alert("Ошибка логина");
 }
 
 // Загрузка серверов
@@ -98,9 +107,6 @@ async function loadDonates(){
     container.appendChild(div);
   });
 }
-
-// Дополнительно: тема
-function toggleTheme(){document.body.classList.toggle("light");}
 </script>
 </body>
 </html>
