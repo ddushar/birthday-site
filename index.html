@@ -3,153 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>С Днём Рождения 💖</title>
-
+<title>Kilop — RolePlay</title>
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
-    color: white;
-    overflow-x: hidden;
-}
-
-.container {
-    padding: 40px 20px;
-}
-
-h1 {
-    font-size: 45px;
-    margin-top: 40px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-.photo {
-    margin: 30px auto;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 6px solid white;
-    box-shadow: 0 0 25px rgba(255,255,255,0.7);
-    animation: zoomIn 2s ease;
-}
-
-.photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-p {
-    font-size: 20px;
-    max-width: 700px;
-    margin: 20px auto;
-    line-height: 1.6;
-}
-
-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 30px;
-    background: white;
-    color: #ff4d6d;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #ff4d6d;
-    color: white;
-}
-
-.hidden {
-    display: none;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes zoomIn {
-    from {transform: scale(0);}
-    to {transform: scale(1);}
-}
-
-/* Сердечки */
-.heart {
-    position: fixed;
-    top: -10px;
-    font-size: 20px;
-    animation: fall linear forwards;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh);
-        opacity: 0;
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f8fdf8;
+        color: #163f1e;
     }
-}
+    header {
+        background: #1a7c3a;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fff;
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+    .hero {
+        text-align: center;
+        padding: 80px 20px;
+        background: #e7f7e7;
+    }
+    .hero h1 {
+        font-size: 48px;
+        margin: 0;
+    }
+    .hero p {
+        font-size: 20px;
+        margin: 10px 0 30px;
+        color: #28552c;
+    }
+    .btn-play {
+        background: #1a7c3a;
+        color: #fff;
+        padding: 15px 30px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 18px;
+    }
+    .blocks {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 40px 20px;
+    }
+    .block {
+        background: #fff;
+        border: 2px solid #1a7c3a;
+        border-radius: 10px;
+        width: 240px;
+        padding: 15px;
+        text-align: center;
+        margin: 10px;
+    }
+    .block h3 {
+        margin: 10px 0;
+        color: #1a7c3a;
+    }
+    footer {
+        background: #163f1e;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        font-size: 14px;
+    }
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<header>
+    <div class="logo">Kilop</div>
+    <nav>
+        <a href="#play">Играть</a>
+        <a href="#about">О проекте</a>
+        <a href="#servers">Сервера</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+</header>
 
-<h1>🎉 С Днём Рождения, моя сестра! 🎂</h1>
+<section class="hero">
+    <h1>Добро пожаловать в Kilop RP</h1>
+    <p>Погрузись в увлекательный мир ролевого отыгрыша</p>
+    <a href="#play" class="btn-play">Начать играть</a>
+</section>
 
-<div class="photo">
-    <img src="photo.jpg" alt="Моя сестра">
-</div>
+<section class="blocks" id="servers">
+    <div class="block">
+        <h3>🌆 Downtown</h3>
+        <p>Сейчас играет: 2800+</p>
+    </div>
+    <div class="block">
+        <h3>🍓 Strawberry</h3>
+        <p>Сейчас играет: 1400+</p>
+    </div>
+    <div class="block">
+        <h3>🏰 Vinewood</h3>
+        <p>Сейчас играет: 1000+</p>
+    </div>
+</section>
 
-<p>
-Что скажу тебе испольняеться 22 года.
-Я не буду говорить много слов просто скажу.
-С днем рождения и сильно не обижайся за компуктер в детсве.
-И то что я сегодня забелол ничего.
-И еще раз с днем рождения тебя
-И это как его я хочу в Тайланд)
-</p>
-
-<button onclick="showSurprise()">Нажми сюда 🎁</button>
-
-<p id="surprise" class="hidden">
-22 — это только начало самого яркого этапа твоей жизни.  
-Пусть каждый день будет особенным! 💫( Это так для лести) )
-</p>
-
-</div>
-
-<script>
-function showSurprise() {
-    document.getElementById("surprise").classList.remove("hidden");
-    alert("Сюрприз для самой лучшей сестры ❤️");
-}
-
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
-}
-
-setInterval(createHeart, 300);
-</script>
+<footer>
+    🛠 © 2026 Kilop RP • Все права защищены
+</footer>
 
 </body>
 </html>
-
-
-
