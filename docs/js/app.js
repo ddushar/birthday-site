@@ -1,7 +1,4 @@
-// Render backend
-const API = "https://birthday-site.onrender.com/api";
-
-// Онлайн счётчик
+// Онлайн счётчик (если нужно)
 let online = document.getElementById("online");
 if(online){
   let target = 8421, count = 0;
@@ -12,6 +9,6 @@ if(online){
   }, 20);
 }
 
-// Модалка
+// Модальные окна (если нужны)
 function openModal(){document.getElementById("modal").style.display="flex";}
 function closeModal(){document.getElementById("modal").style.display="none";}
