@@ -12,10 +12,20 @@
 </header>
 
 <div class="container">
+  <!-- Форма регистрации -->
+  <h1>Регистрация администратора</h1>
+  <input id="regUser" placeholder="Новый логин">
+  <input id="regPass" type="password" placeholder="Новый пароль">
+  <button class="btn" onclick="register()">Зарегистрироваться</button>
+  <hr>
+
+  <!-- Форма входа -->
   <h1>Вход для администратора</h1>
   <input id="logUser" placeholder="Логин">
   <input id="logPass" type="password" placeholder="Пароль">
   <button class="btn" onclick="login()">Войти</button>
+
+  <!-- Панель админа -->
   <div id="adminPanel" style="display:none; margin-top:20px;">
     <h2>Панель админа</h2>
     <p>Здесь можно управлять серверами и донатами</p>
@@ -24,16 +34,33 @@
 
 <script src="js/app.js"></script>
 <script>
+// Логин остаётся прежний
 async function login(){
   const username=document.getElementById("logUser").value;
   const password=document.getElementById("logPass").value;
-  const res=await fetch(`${API}/auth/login`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username,password})});
+  const res=await fetch(`${API}/auth/login`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({username,password})
+  });
   const data=await res.json();
   if(data.token){
     localStorage.setItem("token",data.token);
     document.getElementById("adminPanel").style.display="block";
     alert("Вход выполнен");
-  }else alert("Ошибка логина");
+  } else alert("Ошибка логина");
+}
+
+// Функция регистрации
+async function register(){
+  const username=document.getElementById("regUser").value;
+  const password=document.getElementById("regPass").value;
+  await fetch(`${API}/auth/register`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({username,password})
+  });
+  alert("Аккаунт создан! Теперь можно войти");
 }
 </script>
 </body>
