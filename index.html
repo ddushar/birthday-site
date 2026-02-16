@@ -3,120 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kilop — RolePlay</title>
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f8fdf8;
-        color: #163f1e;
-    }
-    header {
-        background: #1a7c3a;
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    header .logo {
-        font-size: 28px;
-        font-weight: bold;
-        color: #fff;
-    }
-    nav a {
-        text-decoration: none;
-        color: #fff;
-        margin-left: 20px;
-        font-weight: bold;
-    }
-    .hero {
-        text-align: center;
-        padding: 80px 20px;
-        background: #e7f7e7;
-    }
-    .hero h1 {
-        font-size: 48px;
-        margin: 0;
-    }
-    .hero p {
-        font-size: 20px;
-        margin: 10px 0 30px;
-        color: #28552c;
-    }
-    .btn-play {
-        background: #1a7c3a;
-        color: #fff;
-        padding: 15px 30px;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 6px;
-        font-size: 18px;
-    }
-    .blocks {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding: 40px 20px;
-    }
-    .block {
-        background: #fff;
-        border: 2px solid #1a7c3a;
-        border-radius: 10px;
-        width: 240px;
-        padding: 15px;
-        text-align: center;
-        margin: 10px;
-    }
-    .block h3 {
-        margin: 10px 0;
-        color: #1a7c3a;
-    }
-    footer {
-        background: #163f1e;
-        color: #fff;
-        text-align: center;
-        padding: 15px;
-        font-size: 14px;
-    }
-</style>
+<title>Kilop RP</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
-    <div class="logo">Kilop</div>
-    <nav>
-        <a href="#play">Играть</a>
-        <a href="#about">О проекте</a>
-        <a href="#servers">Сервера</a>
-        <a href="#contacts">Контакты</a>
-    </nav>
+  <div class="logo">Kilop</div>
+  <div>
+    <span class="theme-toggle" onclick="toggleTheme()">Сменить тему</span>
+    <a class="btn" onclick="openModal()">Войти</a>
+  </div>
 </header>
 
 <section class="hero">
-    <h1>Добро пожаловать в Kilop RP</h1>
-    <p>Погрузись в увлекательный мир ролевого отыгрыша</p>
-    <a href="#play" class="btn-play">Начать играть</a>
+  <h1>Kilop RolePlay</h1>
+  <p>Игровой RP нового поколения</p>
+  <a href="servers.html" class="btn">Сервера</a>
 </section>
 
-<section class="blocks" id="servers">
-    <div class="block">
-        <h3>🌆 Downtown</h3>
-        <p>Сейчас играет: 2800+</p>
-    </div>
-    <div class="block">
-        <h3>🍓 Strawberry</h3>
-        <p>Сейчас играет: 1400+</p>
-    </div>
-    <div class="block">
-        <h3>🏰 Vinewood</h3>
-        <p>Сейчас играет: 1000+</p>
-    </div>
-</section>
+<div class="container">
+  <h2>Онлайн проекта</h2>
+  <h1 id="online">0</h1>
+</div>
 
-<footer>
-    🛠 © 2026 Kilop RP • Все права защищены
-</footer>
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>Авторизация</h3>
+    <input placeholder="Логин">
+    <input type="password" placeholder="Пароль">
+    <button class="btn" onclick="closeModal()">Войти</button>
+  </div>
+</div>
 
+<script src="js/main.js"></script>
 </body>
 </html>
