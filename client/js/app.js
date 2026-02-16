@@ -1,4 +1,4 @@
-const API = "https://kilop-backend.onrender.com/api";
+const API = "https://birthday-site.onrender.com";
 
 // Онлайн счётчик
 let online = document.getElementById("online");
