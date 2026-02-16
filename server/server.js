@@ -15,4 +15,4 @@ app.use("/api/donate", donateRoutes);
 
 // ⚡ использовать порт от Render или 5000 по умолчанию
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => co
+app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
