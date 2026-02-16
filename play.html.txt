@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>С Днём Рождения 💖</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 45px;
+    margin-top: 40px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.photo {
+    margin: 30px auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid white;
+    box-shadow: 0 0 25px rgba(255,255,255,0.7);
+    animation: zoomIn 2s ease;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4d6d;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff4d6d;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
+/* Сердечки */
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎉 С Днём Рождения, моя сестра! 🎂</h1>
+
+<div class="photo">
+    <img src="https://ibb.co/TB30NSfN alt="Моя сестра">
+</div>
+
+<p>
+Сегодня тебе исполняется 22 года 💖  
+Это возраст силы, красоты и больших возможностей.  
+
+Пусть в твои 22 года:
+✨ мечты сбываются  
+❤️ рядом будут искренние люди  
+💰 приходит успех  
+🌍 жизнь будет наполнена счастьем  
+
+Я горжусь тобой и всегда буду рядом.
+Ты лучшая сестра в мире 💕
+</p>
+
+<button onclick="showSurprise()">Нажми сюда 🎁</button>
+
+<p id="surprise" class="hidden">
+22 — это только начало самого яркого этапа твоей жизни.  
+Пусть каждый день будет особенным! 💫
+</p>
+
+</div>
+
+<script>
+function showSurprise() {
+    document.getElementById("surprise").classList.remove("hidden");
+    alert("Сюрприз для самой лучшей сестры ❤️");
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
