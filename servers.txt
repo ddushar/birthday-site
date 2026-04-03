@@ -1,0 +1,25 @@
+# Формат:
+# КаноническоеИмя: алиас1, алиас2, алиас3
+# Если после ":" ничего нет, будет использовано только каноническое имя.
+
+Downtown:
+Strawberry:
+Vinewood:
+BlackBerry: blackberry, black berry
+InSquad: insquad, in squad
+Sunrise:
+Rainbow:
+Richman:
+Eclipse:
+La Mesa: la mesa, lamesa, lm
+Burton: bt
+Rockford: rockfords, rk
+Davis: dv 
+Harmony: hr
+Redwood: rd
+Del Perro: del perro, delperro, dp
+Murrieta: mt
+Vespucci: vp
+Hawick: hw
+La Puerta: la puerta, lapuerta, lp
+Alta:

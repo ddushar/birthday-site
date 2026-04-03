@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "id": 7,
+      "user_id": 1857832136,
+      "username": "ddushar",
+      "first_name": "Stroguй",
+      "static_server": "123 La Puerta",
+      "server_name": "La Puerta",
+      "proof_kind": "video",
+      "source_message_id": 182,
+      "submitted_at": "2026-04-03 13:20:48 UTC"
+    },
+    {
+      "id": 8,
+      "user_id": 1857832136,
+      "username": "ddushar",
+      "first_name": "Stroguй",
+      "static_server": "234 La Puerta",
+      "server_name": "La Puerta",
+      "proof_kind": "photo",
+      "source_message_id": 205,
+      "submitted_at": "2026-04-03 13:21:30 UTC"
+    },
+    {
+      "id": 9,
+      "user_id": 1857832136,
+      "username": "ddushar",
+      "first_name": "Stroguй",
+      "static_server": "123 Rockford",
+      "server_name": "Rockford",
+      "proof_kind": "photo",
+      "source_message_id": 222,
+      "submitted_at": "2026-04-03 13:23:02 UTC"
+    }
+  ]
+}
